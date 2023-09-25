@@ -1,6 +1,6 @@
 package com.mycompany.sistemadeestudiantes;
 
-import com.mycomapny.baseDeDatos.BaseDeDatos;
+import com.mycompany.baseDeDatos.BaseDeDatos;
 import com.mycompany.modelos.Estudiante;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

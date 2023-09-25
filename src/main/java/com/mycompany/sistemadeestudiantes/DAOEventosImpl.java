@@ -1,6 +1,6 @@
 package com.mycompany.sistemadeestudiantes;
 
-import com.mycomapny.baseDeDatos.BaseDeDatos;
+import com.mycompany.baseDeDatos.BaseDeDatos;
 import com.mycompany.intefaces.DAOEventos;
 import com.mycompany.modelos.Eventos;
 import java.sql.PreparedStatement;

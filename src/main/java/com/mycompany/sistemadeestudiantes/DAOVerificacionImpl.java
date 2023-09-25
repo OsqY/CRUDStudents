@@ -1,6 +1,6 @@
 package com.mycompany.sistemadeestudiantes;
 
-import com.mycomapny.baseDeDatos.BaseDeDatos;
+import com.mycompany.baseDeDatos.BaseDeDatos;
 import com.mycompany.intefaces.DAOVerificacion;
 import com.mycompany.modelos.Usuario;
 import java.sql.PreparedStatement;
