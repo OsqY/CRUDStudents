@@ -1,0 +1,72 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.utils;
+
+import java.math.BigInteger;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ *
+ * @author nbmmll nnnnn
+ */
+public class Utils {
+
+    public static BigInteger convertirId(String strNum) {
+        BigInteger bigInt = new BigInteger(strNum);
+        return bigInt;
+    }
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    public static String getFechaActual() {
+        Date ahora = new Date();
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+        return formateador.format(ahora);
+    }
+
+    public static synchronized int diferenciasDeFechas(Date fechaInicial, Date fechaFinal) throws ParseException {
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        String fechaInicioString = df.format(fechaInicial);
+        try {
+            fechaInicial = df.parse(fechaInicioString);
+        } catch (ParseException ex) {
+
+        }
+
+        String fechaFinalString = df.format(fechaFinal);
+        fechaFinal = df.parse(fechaFinalString);
+
+        long fechaInicialMs = fechaInicial.getTime();
+        long fechaFinalMs = fechaFinal.getTime();
+        long diferencia = fechaFinalMs - fechaInicialMs;
+        double dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        return ((int) dias);
+    }
+
+    public static synchronized java.util.Date stringToDate(String fecha) {
+        SimpleDateFormat formatoDelTexto = new SimpleDateFormat("dd-MM-yyyy");
+        Date fechaEnviar = null;
+        try {
+            fechaEnviar = formatoDelTexto.parse(fecha);
+            return fechaEnviar;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
